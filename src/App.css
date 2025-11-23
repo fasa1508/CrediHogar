@@ -1,0 +1,254 @@
+/* ===================================
+   APP - ESTILOS PRINCIPALES
+   =================================== */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding-bottom: 3rem;
+}
+
+/* Footer */
+.app-footer {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-color) 100%);
+  color: white;
+  padding: 2rem 0;
+  margin-top: auto;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.footer-section h3 {
+  color: white;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.footer-section p {
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.85);
+  transition: var(--transition);
+}
+
+.footer-links a:hover {
+  color: white;
+  padding-left: 5px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  margin-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-bottom p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Botón flotante de ayuda - responsive */
+.floating-help-btn {
+  position: fixed;
+  bottom: clamp(1.25rem, 3vw, 2rem);
+  right: clamp(1.25rem, 3vw, 2rem);
+  width: clamp(50px, 10vw, 60px);
+  height: clamp(50px, 10vw, 60px);
+  background: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
+  cursor: pointer;
+  transition: var(--transition);
+  z-index: 999;
+  animation: pulse 2s infinite;
+}
+
+.floating-help-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 30px rgba(37, 99, 235, 0.6);
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Sección Hero - responsive */
+.hero-section {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+  padding: clamp(2rem, 5vw, 3rem) clamp(1rem, 2.5vw, 1rem);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hero-title {
+  font-size: clamp(1.6rem, 5vw, 3rem);
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.hero-description {
+  font-size: clamp(0.95rem, 2.5vw, 1.3rem);
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Mensaje de bienvenida admin - responsive */
+.admin-welcome {
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  padding: clamp(0.85rem, 2vw, 1rem) clamp(1.5rem, 3vw, 2rem);
+  border-radius: var(--radius-md);
+  margin: clamp(1.25rem, 3vw, 2rem) auto;
+  max-width: 1200px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  animation: slideInRight 0.5s ease-out;
+}
+
+.admin-welcome h3 {
+  color: white;
+  margin-bottom: 0.5rem;
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+}
+
+.admin-welcome p {
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+/* ===================================
+   RESPONSIVE MEJORADO - MOBILE FIRST
+   =================================== */
+
+/* Móvil pequeño (hasta 480px) */
+@media (max-width: 480px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    padding: 0 0.75rem;
+  }
+
+  .footer-section h3 {
+    font-size: 1.05rem;
+  }
+
+  .footer-section p {
+    font-size: 0.9rem;
+  }
+
+  .footer-links a {
+    font-size: 0.9rem;
+  }
+
+  .footer-bottom p {
+    font-size: 0.8rem;
+  }
+
+  .floating-help-btn {
+    width: 48px;
+    height: 48px;
+    font-size: 1.3rem;
+    bottom: 1rem;
+    right: 1rem;
+  }
+
+  .hero-section {
+    padding: 1.75rem 0.75rem;
+  }
+
+  .admin-welcome {
+    margin: 1rem 0.75rem;
+    padding: 0.85rem 1.25rem;
+  }
+
+  .app-footer {
+    padding: 1.5rem 0;
+  }
+}
+
+/* Móvil grande (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .floating-help-btn {
+    width: 52px;
+    height: 52px;
+    font-size: 1.5rem;
+    bottom: 1.25rem;
+    right: 1.25rem;
+  }
+
+  .hero-section {
+    padding: 2rem 1rem;
+  }
+
+  .admin-welcome {
+    margin: 1.5rem 1rem;
+    padding: 1rem 1.5rem;
+  }
+}
+
+/* Tablet (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop grande (1400px+) */
+@media (min-width: 1400px) {
+  .footer-content,
+  .admin-welcome {
+    max-width: 1400px;
+  }
+
+  .floating-help-btn {
+    width: 65px;
+    height: 65px;
+    font-size: 1.9rem;
+  }
+}
